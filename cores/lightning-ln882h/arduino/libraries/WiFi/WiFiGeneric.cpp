@@ -47,7 +47,7 @@ bool WiFiClass::modePriv(WiFiMode mode, WiFiModeAction sta, WiFiModeAction ap) {
 		netdev_set_active(NETIF_IDX_STA);
 
 		// 3. wifi start
-		wifi_sta_start(mac_addr, WIFI_NO_POWERSAVE);
+		wifi_sta_start(mac_addr_override, WIFI_NO_POWERSAVE);
 
 		wifiEventSendArduino(ARDUINO_EVENT_WIFI_STA_START);
 	} else if (sta == WLMODE_DISABLE) {
