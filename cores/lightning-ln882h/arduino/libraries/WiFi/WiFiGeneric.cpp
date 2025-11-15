@@ -4,7 +4,7 @@
 
 static uint8_t psk_value[40] = {0x0};
 
-static uint8_t mac_addr_override[6]	 = {0x00, 0x50, 0xC2, 0x88, 0xF5, 0x01};
+static uint8_t mac_addr_override[6]	 = {0x70, 0x4E, 0x01, 0x20, 0x01, 0x00};
 
 bool WiFiClass::modePriv(WiFiMode mode, WiFiModeAction sta, WiFiModeAction ap) {
 	__wrap_ln_printf_disable();
