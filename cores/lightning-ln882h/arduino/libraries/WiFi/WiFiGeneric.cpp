@@ -4,6 +4,8 @@
 
 static uint8_t psk_value[40] = {0x0};
 
+static uint8_t mac_addr_override[6]	 = {0x00, 0x50, 0xC2, 0x88, 0xF5, 0x01};
+
 bool WiFiClass::modePriv(WiFiMode mode, WiFiModeAction sta, WiFiModeAction ap) {
 	__wrap_ln_printf_disable();
 
@@ -38,7 +40,8 @@ bool WiFiClass::modePriv(WiFiMode mode, WiFiModeAction sta, WiFiModeAction ap) {
 
 		// 1. sta mac get
 		uint8_t mac_addr[6];
-		setMacAddress(macAddress(mac_addr));
+		//setMacAddress(macAddress(mac_addr));
+		setMacAddress(mac_addr_override);
 
 		// 2. net device(lwip)
 		netdev_set_active(NETIF_IDX_STA);
